@@ -54,13 +54,17 @@ export function isSpam(input: LeadInput) {
 export function validateLead(input: LeadInput): Record<string, string> {
   const errors: Record<string, string> = {};
   const name = str(input.fullName);
-  if (name.length < 2 || name.length > 100) errors.fullName = "يرجى إدخال الاسم الكامل (من 2 إلى 100 حرف).";
+  if (name.length < 2 || name.length > 100)
+    errors.fullName = "يرجى إدخال الاسم الكامل (من 2 إلى 100 حرف).";
   if (!PHONE.test(str(input.phone))) errors.phone = "يرجى إدخال رقم هاتف صحيح.";
   const email = str(input.email);
-  if (email && (email.length > 150 || !EMAIL.test(email))) errors.email = "يرجى إدخال بريد إلكتروني صحيح.";
-  if (!(str(input.service) in SERVICES)) errors.service = "يرجى اختيار الخدمة المطلوبة.";
+  if (email && (email.length > 150 || !EMAIL.test(email)))
+    errors.email = "يرجى إدخال بريد إلكتروني صحيح.";
+  if (!Object.hasOwn(SERVICES, str(input.service)))
+    errors.service = "يرجى اختيار الخدمة المطلوبة.";
   if (str(input.company).length > 120) errors.company = "اسم الشركة طويل جداً.";
-  if (str(input.message).length > 2000) errors.message = "الرسالة طويلة جداً (الحد الأقصى 2000 حرف).";
+  if (str(input.message).length > 2000)
+    errors.message = "الرسالة طويلة جداً (الحد الأقصى 2000 حرف).";
   return errors;
 }
 

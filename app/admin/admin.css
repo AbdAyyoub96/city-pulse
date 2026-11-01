@@ -1,0 +1,114 @@
+/* Admin styles are scoped to the admin document. */
+.admin-page .form-msg {
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 13px;
+}
+.admin-page .admin-card {
+  display: grid;
+  gap: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+}
+.admin-page .admin .nav,
+.admin-page .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+.admin-page .nav form {
+  margin: 0;
+}
+.admin-page .admin {
+  padding-block: 32px 64px;
+}
+.admin-page .admin-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.admin-page .admin-bar h1 {
+  font-size: var(--step-2);
+}
+.admin-page .filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.admin-page .filters a {
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.admin-page .filters a[aria-current="page"] {
+  border-color: var(--orange);
+  color: var(--fg);
+}
+.admin-page .admin-empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+}
+.admin-page .table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.admin-page .table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+.admin-page .table-wrap th,
+.admin-page .table-wrap td {
+  padding: 12px 14px;
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.admin-page .table-wrap th {
+  background: var(--ink-2);
+  color: var(--muted);
+  font-weight: 500;
+  font-size: var(--step--1);
+}
+.admin-page .table-wrap td small {
+  display: block;
+  color: var(--muted);
+}
+.admin-page .table-wrap .msg {
+  max-width: 320px;
+  white-space: pre-wrap;
+  color: var(--muted);
+}
+.admin-page .table-wrap .nowrap {
+  white-space: nowrap;
+}
+.admin-page .table-wrap select {
+  min-height: 40px;
+  padding: 6px 10px;
+}
+.admin-page .admin-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding-inline: max(16px, env(safe-area-inset-left, 0px));
+}
+.admin-page .admin-card {
+  width: min(420px, 100%);
+}
+.admin-page .admin-card h1 {
+  font-size: var(--step-2);
+}
